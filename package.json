@@ -7,12 +7,16 @@
     "Nicolas Gallagher",
     "Azin Asili"
   ],
-  "version": "3.0.3",
+  "version": "3.0.4",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:azinasili/normalize-app.scss.git"
   },
+  "style": "_normalize-app.scss",
+  "files": [
+    "_normalize-app.scss"
+  ],
   "keywords": [
     "normalize",
     "reset",
