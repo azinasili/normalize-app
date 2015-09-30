@@ -1,18 +1,23 @@
 {
-  "name": "normalize.css",
-  "version": "3.0.3",
-  "description": "Normalize.css as a node packaged module",
-  "style": "normalize.css",
-  "files": [
-    "LICENSE.md",
-    "normalize.css"
+  "name": "normalize-app.scss",
+  "title": "normalize-app",
+  "description": "Sass normalize to be used for web apps.",
+  "homepage": "https://github.com/azinasili/normalize-app.scss",
+  "author": [
+    "Nicolas Gallagher",
+    "Azin Asili"
   ],
-  "homepage": "http://necolas.github.io/normalize.css",
+  "version": "3.0.3",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/necolas/normalize.css.git"
+    "url": "git@github.com:azinasili/normalize-app.scss.git"
   },
-  "main": "normalize.css",
-  "author": "Nicolas Gallagher",
-  "license": "MIT"
+  "keywords": [
+    "normalize",
+    "reset",
+    "typography",
+    "design",
+    "ui"
+  ]
 }

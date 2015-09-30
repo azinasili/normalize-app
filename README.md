@@ -1,3 +1,9 @@
+# normalize-app.scss
+
+Normalize-app.scss builds off of normalize with small tweaks made specifically
+for webapps in mind. Normalize-app.scss offers a small set of settings to make
+consistent heading typography.
+
 # normalize.css v3
 
 Normalize.css is a customisable CSS file that makes browsers render all
@@ -11,15 +17,12 @@ normalizing.
 
 ## Install
 
-* [npm](http://npmjs.org/): `npm install --save normalize.css`
-* [Component(1)](https://github.com/component/component/): `component install necolas/normalize.css`
-* [Bower](http://bower.io/): `bower install --save normalize.css`
-* [cdnjs](https://cdnjs.com/libraries/normalize)
-* [Download](http://necolas.github.io/normalize.css/latest/normalize.css).
+* [Bower](http://bower.io/): `bower install --save normalize-app`
+* [Download](https://github.com/azinasili/normalize-app.scss).
 
-No other styles should come before Normalize.css.
+No other styles should come before Normalize-app.scss.
 
-It is recommended that you include the `normalize.css` file as untouched
+It is recommended that you include the `_normalize-app.scss` file as untouched
 library code.
 
 ## What does it do?
@@ -39,9 +42,8 @@ library code.
 * Apple Safari 6+
 * Internet Explorer 8+
 
-[Normalize.css v1 provides legacy browser
-support](https://github.com/necolas/normalize.css/tree/v1) (IE 6+, Safari 4+),
-but is no longer actively developed.
+Browser support is based on `normalize.css` support. More details can be found
+at the original [repo](https://github.com/necolas/normalize.css).
 
 ## Extended details
 

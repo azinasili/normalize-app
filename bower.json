@@ -1,8 +1,21 @@
 {
-  "name": "normalize-css",
+  "name": "normalize-app.scss",
+  "description": "Sass normalize to be used for web apps.",
   "version": "3.0.3",
-  "main": "normalize.css",
-  "author": "Nicolas Gallagher",
+  "author": [
+    "Nicolas Gallagher",
+    "Azin Asili"
+  ],
+  "homepage": "https://github.com/azinasili/normalize-app.scss",
+  "license": "MIT",
+  "main": "_normalize-app.scss",
+  "keywords": [
+    "normalize",
+    "reset",
+    "typography",
+    "design",
+    "ui"
+  ],
   "ignore": [
     "CHANGELOG.md",
     "CONTRIBUTING.md",
