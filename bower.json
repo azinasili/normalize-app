@@ -1,5 +1,5 @@
 {
-  "name": "normalize-app.scss",
+  "name": "normalize-app",
   "description": "Sass normalize to be used for web apps.",
   "version": "3.0.3",
   "author": [
