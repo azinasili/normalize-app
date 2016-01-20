@@ -102,8 +102,8 @@ video {
   vertical-align: baseline; // 2
 }
 
-// 1. Prevents modern browsers from displaying 'audio' without controls
-// 2. Remove excess height in iOS5 devices
+// 1. Prevent modern browsers from displaying `audio` without controls.
+// 2. Remove excess height in iOS 5 devices.
 audio:not([controls]) {
   display: none; // 1
   height: 0; // 2
