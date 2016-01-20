@@ -313,8 +313,8 @@ input::-moz-focus-inner {
   padding: 0;
 }
 
-// Addresses FF3/4 setting line-height on 'input' using !important in the
-// UA stylesheet
+// Address Firefox 4+ setting `line-height` on `input` using `!important` in
+// the UA stylesheet.
 input {
   line-height: normal;
 
@@ -366,7 +366,7 @@ legend {
   padding: 0; // 2
 }
 
-// Removes default vertical scrollbar in IE6/7/8/9
+// Removes default vertical scrollbar in IE 8/9/10/11.
 textarea {
   overflow: auto;
 }
