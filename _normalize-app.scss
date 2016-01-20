@@ -298,10 +298,10 @@ input[type='submit'] {
   cursor: pointer; // 3
 }
 
-// 1. Re-set cursor for disabled elements
-// 2. Prevent selecting disabled elements
+// 1. Re-set cursor for disabled elements.
+// 2. Prevent selecting disabled elements.
 button[disabled],
-input[disabled] {
+html input[disabled] {
   cursor: not-allowed; // 1
   user-select: none; // 2
 }
