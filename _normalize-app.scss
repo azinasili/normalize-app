@@ -27,15 +27,24 @@ $normalize-settings: (
   headings        : false // 2
 ) !default;
 
-// First value in list sets heading size
-// Second value in list sets margin size
-$normalize-headings: (
-  h1              : (2em, .67em 0),
-  h2              : (1.5em, .83em 0),
-  h3              : (1.17em, 1em 0),
-  h4              : (1em, 1.33em 0),
-  h5              : (.83em, 1.67em 0),
-  h6              : (.75em, 2.33em 0)
+// Set default heading size.
+$normalize-heading: (
+  h1              : 2em,
+  h2              : 1.5em,
+  h3              : 1.17em,
+  h4              : 1em,
+  h5              : .83em,
+  h6              : .75em
+) !default;
+
+// Create default `margin` size.
+$normalize-heading-margin: (
+  h1              : .67em 0,
+  h2              : .83em 0,
+  h3              : 1em 0,
+  h4              : 1.33em 0,
+  h5              : 1.67em 0,
+  h6              : 2.33em 0
 ) !default;
 
 
@@ -145,8 +154,8 @@ a {
   // Get heading sizes from headings map
   @for $i from 1 through length($normalize-headings) {
     h#{$i} {
-      font-size: nth(map-get($normalize-headings, h#{$i}), 1);
-      margin: nth(map-get($normalize-headings, h#{$i}), 2);
+      font-size: map-get($normalize-heading, h#{$i});
+      margin: map-get($normalize-heading-margin, h#{$i});
     }
   }
 }
