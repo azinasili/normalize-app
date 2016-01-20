@@ -63,12 +63,12 @@ html {
 
 // Allows components to change box-sizing
 *,
-*::before,
-*::after {
+::before,
+::after {
   box-sizing: inherit;
 }
 
-// Addresses margins handled incorrectly in IE6/7
+// Remove default margin
 body {
   margin: 0;
 }
