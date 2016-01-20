@@ -138,8 +138,9 @@ a {
 // 4. Typography
 // ----------------------------------------------------------------------------
 
-// Addresses font sizes and margins set differently in IE6/7
-// Addresses font sizes within 'section' and 'article' in FF4+, Chrome, S5
+// Size all headings
+// Addresses variable `h1` font size and margin within `section` and `article`
+// contexts in Firefox 4+, Safari, and Chrome.
 @if map-get($normalize-settings, headings) != false {
   // Get heading sizes from headings map
   @for $i from 1 through length($normalize-headings) {
@@ -150,7 +151,7 @@ a {
   }
 }
 
-// Address styling not present in IE 8/9/10/11, Safari, and Chrome
+// Address styling not present in IE 8/9/10/11, Safari, and Chrome.
 abbr[title] {
   border-bottom: 1px dotted;
 }
@@ -166,7 +167,7 @@ dfn {
   font-style: italic;
 }
 
-// Addresses styling not present in IE 8/9
+// Addresses styling not present in IE 8/9.
 mark {
   background: #ff0;
   color: #000;
@@ -192,18 +193,6 @@ sup {
 
 sub {
   bottom: -.25em;
-}
-
-// 1. Set consistent quote types.
-// 2. Addresses quote property not supported in S4
-q {
-  quotes: '\201C' '\201D' '\2018' '\2019'; // 1
-
-  &::before,
-  &::after {
-    content: ''; // 2
-    content: none; // 2
-  }
 }
 
 
