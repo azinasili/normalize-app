@@ -1,5 +1,11 @@
 === HEAD
 
+=== 3.0.5 (Jan 19, 2016)
+
+* Remove rules for browsers up to IE 8.
+* Added new rules from last normalize.css update.
+* Fixed up comments.
+
 === 3.0.3 (March 30, 2015)
 
 * Remove unnecessary vendor prefixes.
