@@ -1,5 +1,9 @@
 === HEAD
 
+=== 3.0.6 (Jan 27, 2016)
+
+* Hotfix for incorrect variable name when building headings.
+
 === 3.0.5 (Jan 19, 2016)
 
 * Remove rules for browsers up to IE 8.
