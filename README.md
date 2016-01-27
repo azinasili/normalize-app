@@ -46,10 +46,6 @@ library code. Settings map must be placed before importing `_normalize-app.scss`
 Browser support is based on `normalize.css` support. More details can be found
 at the original [project](https://github.com/necolas/normalize.css).
 
-## Contributing
-
-Please read the CONTRIBUTING.md
-
 ## Acknowledgements
 
 Normalize.css is a project by [Nicolas Gallagher](https://github.com/necolas),
