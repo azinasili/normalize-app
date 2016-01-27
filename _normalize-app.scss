@@ -152,7 +152,7 @@ a {
 // contexts in Firefox 4+, Safari, and Chrome.
 @if map-get($normalize-settings, headings) != false {
   // Get heading sizes from headings map
-  @for $i from 1 through length($normalize-headings) {
+  @for $i from 1 through length($normalize-heading) {
     h#{$i} {
       font-size: map-get($normalize-heading, h#{$i});
       margin: map-get($normalize-heading-margin, h#{$i});
