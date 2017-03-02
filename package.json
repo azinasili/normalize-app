@@ -1,27 +1,31 @@
 {
   "name": "normalize-app",
-  "title": "normalize-app",
+  "version": "3.2.0",
   "description": "Sass normalize to be used for web apps.",
   "homepage": "https://github.com/azinasili/normalize-app.scss",
   "author": [
-    "Nicolas Gallagher",
-    "Azin Asili"
+    "Jonathan Neal <jonathantneal@hotmail.com> (http://jonathantneal.com/)",
+    "Nicolas Gallagher <nicolas@nicolasgallagher.com> (http://nicolasgallagher.com/)",
+    "Azin Asili <hello@azinasili.com> (http://azinasili.com/)"
   ],
-  "version": "3.1.0",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:azinasili/normalize-app.scss.git"
-  },
+  "main": "_normalize-app.scss",
   "style": "_normalize-app.scss",
-  "files": [
-    "_normalize-app.scss"
-  ],
   "keywords": [
     "normalize",
     "reset",
     "typography",
     "design",
     "ui"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:azinasili/normalize-app.scss.git"
+  },
+  "bugs": {
+    "url": "https://github.com/necolas/normalize.css/issues"
+  },
+  "files": [
+    "_normalize-app.scss"
+  ],
 }
