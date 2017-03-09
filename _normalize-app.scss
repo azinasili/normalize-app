@@ -6,15 +6,16 @@
 // useful default styling and settings to begin any project
 //
 // 1. Settings
-// 2. Document
-// 3. Sections
-// 4. Typography
-// 5. Grouping Content
-// 6. Embedded content
-// 7. Forms
-// 8. Interactive
-// 9. Scripting
-// 10. Miscellaneous
+// 2. Functions
+// 3. Document
+// 4. Sections
+// 5. Typography
+// 6. Grouping Content
+// 7. Embedded content
+// 8. Forms
+// 9. Interactive
+// 10. Scripting
+// 11. Miscellaneous
 // ----------------------------------------------------------------------------
 
 
@@ -22,26 +23,125 @@
 // 1. Settings
 // ----------------------------------------------------------------------------
 
-// 1. Default font-family.
-// 2. Turn heading normalization on/off.
+/// normalize-app.scss default settings.
+///
+/// @access private
+///
+/// @type map
+///
+/// @property {value} font-family [sans-serif]
+///   Normalize font-family for project.
+///
+/// @property {boolean} normalize-headings [false]
+///   Set heading sizes.
+///
+/// @property {map} headings [('h1': 2em, 'h2': 1.5em, 'h3': 1.17em, 'h4': 1em, 'h5': .83em, 'h6': .75em)]
+///   Heading sizes.
 $_normalize-settings: (
-  'font-family': sans-serif, // 1
-  'headings'   : false, // 2
-) !default;
+  'font-family': sans-serif,
+  'normalize-headings': false,
+  'headings': (
+    'h1': 2em,
+    'h2': 1.5em,
+    'h3': 1.17em,
+    'h4': 1em,
+    'h5': .83em,
+    'h6': .75em,
+  ),
+);
 
-// Default heading size.
-$_normalize-heading: (
-  'h1': 2em,
-  'h2': 1.5em,
-  'h3': 1.17em,
-  'h4': 1em,
-  'h5': .83em,
-  'h6': .75em,
-) !default;
+/// This variable is a sass map that overrides normalize-app.scss default settings.
+/// Use this to define your project's properties.
+///
+/// @access public
+///
+/// @type map
+///
+/// @example scss
+///   $normalize: (
+///     'normalize-headings': true,
+///   );
+$normalize: () !default;
 
 
 // ----------------------------------------------------------------------------
-// 2. Document
+// 2. Functions
+// ----------------------------------------------------------------------------
+
+/// Deep map-get
+///
+/// @access private
+///
+/// @param {map} $map
+///   Name of map
+///
+/// @param {string} $keys
+///   Key(s) to map
+///
+/// @return {boolean | color | list | number | string}
+///
+/// @example scss
+///   $normalize: ('font-family': monospace);
+///   .foo {
+///     font-family: _norm-get($normalize, 'monospace');
+///   }
+///
+/// @example css
+///   .foo {
+///     font-family: monospace;
+///   }
+///
+/// @throw Warning if `$keys` does not exist in `$map`
+@function _norm-get($map, $keys...) {
+  @each $key in $keys {
+    @if map-has-key($map, $key) == false {
+      $_wrong-value: map-values($map);
+
+      @warn '`#{$keys}` does not exit in map, using first key/value pair instead.';
+      @return nth($_wrong-value, 1);
+    }
+
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+/// Return setting from map
+///
+/// @access private
+///
+/// @param {map} $override
+///   User defined settings
+///
+/// @param {key} $setting
+///   Map key of setting
+///
+/// @return {boolean | color | list | number | string}
+///
+/// @example scss
+///   $normalize: ('font-family': monospace);
+///   .foo {
+///     font-family: _norm-get-setting($normalize, 'monospace');
+///   }
+///
+/// @example css
+///   .foo {
+///     font-family: monospace;
+///   }
+@function _norm-get-setting($override, $settings...) {
+  $_config: map-merge($_normalize-settings, $override);
+
+  @if _norm-get($_config, $settings...) == string {
+    @return unquote(_norm-get($_config, $settings...));
+  }
+
+  @return _norm-get($_config, $settings...);
+}
+
+
+// ----------------------------------------------------------------------------
+// 3. Document
 // ----------------------------------------------------------------------------
 
 // Fine grain control of the viewport <meta> tag
@@ -57,7 +157,7 @@ $_normalize-heading: (
 // 4. Prevent adjustments of font size after orientation changes in IE and iOS.
 html {
   box-sizing: border-box; // 1
-  font-family: map-get($_normalize-settings, 'font-family'); // 2
+  font-family: _norm-get-setting($normalize, 'font-family'); // 2
   line-height: 1.15; // 3
   -ms-text-size-adjust: 100%; // 4
   -webkit-text-size-adjust: 100%; // 4
@@ -72,7 +172,7 @@ html {
 
 
 // ----------------------------------------------------------------------------
-// 3. Sections
+// 4. Sections
 // ----------------------------------------------------------------------------
 
 // Remove the margin in all browsers (opinionated).
@@ -92,15 +192,15 @@ section {
 
 
 // ----------------------------------------------------------------------------
-// 4. Typography
+// 5. Typography
 // ----------------------------------------------------------------------------
 
 // Size all headings
 // Get heading sizes from headings map
-@if map-get($_normalize-settings, 'headings') {
-  @for $i from 1 through length($_normalize-heading) {
+@if _norm-get-setting($normalize, 'normalize-headings') {
+  @for $i from 1 through length(_norm-get-setting($normalize, 'headings')) {
     h#{$i} {
-      font-size: map-get($_normalize-heading, 'h#{$i}');
+      font-size: _norm-get-setting($normalize, 'headings', 'h#{$i}');
     }
   }
 }
@@ -184,7 +284,7 @@ sub {
 
 
 // ----------------------------------------------------------------------------
-// 5. Grouping Content
+// 6. Grouping Content
 // ----------------------------------------------------------------------------
 
 // Add the correct display in IE 9-.
@@ -217,7 +317,7 @@ pre {
 
 
 // ----------------------------------------------------------------------------
-// 6. Embedded content
+// 7. Embedded content
 // ----------------------------------------------------------------------------
 
 // Add the correct display in IE 9-.
@@ -249,7 +349,7 @@ iframe {
 
 
 // ----------------------------------------------------------------------------
-// 7. Forms
+// 8. Forms
 // ----------------------------------------------------------------------------
 
 // 1. Make font `inherit` project default in all browsers.
@@ -373,7 +473,7 @@ textarea {
 
 
 // ----------------------------------------------------------------------------
-// 8. Interactive
+// 9. Interactive
 // ----------------------------------------------------------------------------
 
 // Add the correct display in IE 9-.
@@ -390,7 +490,7 @@ summary {
 
 
 // ----------------------------------------------------------------------------
-// 9. Scripting
+// 10. Scripting
 // ----------------------------------------------------------------------------
 
 // Add the correct display in IE 9-.
@@ -405,7 +505,7 @@ template {
 
 
 // ----------------------------------------------------------------------------
-// 10. Miscellaneous
+// 11. Miscellaneous
 // ----------------------------------------------------------------------------
 
 // Add the correct display in IE 10-.
