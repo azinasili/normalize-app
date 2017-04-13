@@ -1,8 +1,8 @@
 {
   "name": "normalize-app",
-  "version": "3.3.0",
+  "version": "3.4.1",
   "description": "Sass normalize to be used for web apps.",
-  "homepage": "https://github.com/azinasili/normalize-app.scss",
+  "homepage": "https://github.com/azinasili/normalize-app",
   "authors": [
     "Jonathan Neal <jonathantneal@hotmail.com> (http://jonathantneal.com/)",
     "Nicolas Gallagher <nicolas@nicolasgallagher.com> (http://nicolasgallagher.com/)",
