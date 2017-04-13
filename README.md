@@ -26,7 +26,6 @@ Or download and include normalize-app directly:
 ## Settings
 Normalize-app does come with some settings to manage typography. However the options map
 must come before importing normalize.app. Here is all the settings and default values for normalize-app:
-With [NPM](https://www.npmjs.com/package/normalize-app):
 
 ```scss
 $normalize: (
