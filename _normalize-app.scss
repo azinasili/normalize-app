@@ -207,16 +207,9 @@ section {
 
 // 1. Remove the gray background on active links in IE 10.
 // 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
-// 3. Remove the outline on focused links when they are also active or hovered
-//    in all browsers (opinionated).
 a {
   background-color: transparent; // 1/
   -webkit-text-decoration-skip: objects; // 2
-
-  &:active,
-  &:hover {
-    outline-width: 0; // 3
-  }
 }
 
 // 1. Remove the bottom border in Firefox 39-.
@@ -360,7 +353,7 @@ optgroup,
 select,
 textarea {
   font-family: inherit; // 1
-  font-size: 100%;
+  font-size: inherit;
   margin: 0; // 2
 }
 
@@ -403,13 +396,6 @@ button:-moz-focusring,
 [type='reset']:-moz-focusring,
 [type='submit']:-moz-focusring {
   outline: 1px dotted ButtonText;
-}
-
-// Change the border, margin, and padding in all browsers (opinionated).
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: .35em .625em .75em;
 }
 
 // 1. Correct the text wrapping in Edge and IE.
